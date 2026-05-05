@@ -15,7 +15,7 @@ export default function Login() {
       const data = await request("/auth/login", {
         method: "POST",
         body: JSON.stringify({ username, password })
-      });
+      }) as { token: string };
       localStorage.setItem("token", data.token);
       window.location.href = "/";
     } catch {

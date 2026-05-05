@@ -10,7 +10,7 @@ export default function CalculationTree() {
 
   async function load() {
     try {
-      const data = await request("/calculations");
+      const data = await request("/calculations") as NodeType[];
       setTree(data);
     } catch {
       setError("Failed to load calculations.");
